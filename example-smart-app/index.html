@@ -3,12 +3,12 @@
   <head>
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <title>Test 1 Example-SMART-App</title>
+    <title>Cory's Example-SMART-App</title>
 
     <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
   </head>
   <body>
-    <h2>Example-SMART-App</h2>
+    <h2>Cory's Example-SMART-App</h2>
     <div id='errors'>
     </div>
     <div id="loading">Loading...</div>
@@ -61,13 +61,14 @@
           <td id='hdl'></td>
         </tr>
       </table>
+      <div id='ptJson'></div>
     </div>
     <script src='./src/js/example-smart-app.js'></script>
     <script src='./lib/fhir-client.js'></script>
     <script>
     function ready(smart) {
     var patient = smart.api.read({type: 'Patient', id: '711924'}).then(function(response) {
-    document.body.innerText = JSON.stringify(response);
+    $("#ptJson").text(JSON.stringify(response));
     });
     }
     function notReady() {
